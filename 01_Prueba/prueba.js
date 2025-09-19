@@ -18,18 +18,17 @@
 
 // Ejercicio 02
  
-  
   numero1 = prompt("Introduce numero 1");
   numero2 = prompt("Introduce numero 2");
 
-  resultado = (parseInt(numero1) + parseInt(numero2));
+    suma = numero1 + numero2;
+    resta = numero1 - numero2;
+    multiplicacion = numero1 * numero2;
+    division = numero1 / numero2;
 
-  if (numero1 == numero) {
-    
-  } else {
-    
-  }
-  numero1 == numero2 == ("false");
 
-  document.writeln(numero1  + " y " + numero2 + " es " + resultado); 
-
+    // Imprimimos por pantala el resultado
+    document.writeln("La suma de " + numero1 + " y " + numero2 + " es " + suma + "<br>");
+    document.writeln("La resta de " + numero1 + " y " + numero2 + " es " + resta + "<br>");
+    document.writeln("La multiplicacion de " + numero1 + " y " + numero2 + " es " + multiplicacion + "<br>");
+    document.writeln("La division de " + numero1 + " y " + numero2 + " es " + division + "<br>");
