@@ -1,4 +1,8 @@
 
+
+
+// Ejercicio 01
+/*
 // Declaramos las variables
 
   nombre1 = prompt("Introduce tu nombre");
@@ -9,3 +13,15 @@
 
 // Imprimimos por pantalla el resultado
  document.writeln(nombre1 + " y " + nombre2 + " son novios");
+
+
+*/
+
+
+// Ejercicio 02
+ 
+
+  A = prompt("Introduce numero 1");
+  B = prompt("Introduce numero 2");
+
+  document.writeln ( A + B)
