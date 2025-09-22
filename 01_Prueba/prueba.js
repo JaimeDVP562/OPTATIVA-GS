@@ -28,7 +28,7 @@
 
 
     // Imprimimos por pantala el resultado
-    document.writeln("La suma de " + numero1 + " y " + numero2 + " es " + suma + "<br>");
+    document.writeln("La sumaa de " + numero1 + " y " + numero2 + " es " + suma + "<br>");
     document.writeln("La resta de " + numero1 + " y " + numero2 + " es " + resta + "<br>");
     document.writeln("La multiplicacion de " + numero1 + " y " + numero2 + " es " + multiplicacion + "<br>");
     document.writeln("La division de " + numero1 + " y " + numero2 + " es " + division + "<br>");
