@@ -42,12 +42,22 @@
     // Introduce la nota y di si está suspenso o no
 
     numero1 = prompt("Introduce la nota");
+    
+        if ((numero1 < 0)||(numero1 > 10)) {
+          alert("Nota invalida");
+          numero1 = prompt("Introduce la nota");
 
-        if ((numero1 >= 5) && (numero1 <=10)) {
+          }else if ((numero1 >= 5) && (numero1 <=10)) {
+
           console.log("Menos mal has aprovado");
+
         } else if ((numero1 >=0) && (numero1 < 5)) {
+
           console.log("Otro año a septiembre con los pokemon");
-        }
+        } 
+
+
+
 
 
 
