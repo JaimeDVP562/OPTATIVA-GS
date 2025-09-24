@@ -16,10 +16,13 @@
  document.writeln(nombre1 + " y " + nombre2 + " son novios");
  */
 
-// Ejercicio 02
  
-  numero1 = prompt("Introduce numero 1");
-  numero2 = prompt("Introduce numero 2");
+
+/*
+
+// Ejercicio 02
+    numero1 = prompt("Introduce numero 1");
+    numero2 = prompt("Introduce numero 2");
 
     suma = numero1 + numero2;
     resta = numero1 - numero2;
@@ -32,3 +35,19 @@
     document.writeln("La resta de " + numero1 + " y " + numero2 + " es " + resta + "<br>");
     document.writeln("La multiplicacion de " + numero1 + " y " + numero2 + " es " + multiplicacion + "<br>");
     document.writeln("La division de " + numero1 + " y " + numero2 + " es " + division + "<br>");
+
+*/
+
+
+    // Introduce la nota y di si está suspenso o no
+
+    numero1 = prompt("Introduce la nota");
+
+        if ((numero1 >= 5) && (numero1 <=10)) {
+          console.log("Menos mal has aprovado");
+        } else if ((numero1 >=0) && (numero1 < 5)) {
+          console.log("Otro año a septiembre con los pokemon");
+        }
+
+
+
