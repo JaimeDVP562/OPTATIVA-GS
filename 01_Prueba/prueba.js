@@ -52,7 +52,7 @@
           console.log("Menos mal has aprovado");
 
         } else if ((numero1 >=0) && (numero1 < 5)) {
-
+        
           console.log("Otro año a septiembre con los pokemon");
         } 
 
