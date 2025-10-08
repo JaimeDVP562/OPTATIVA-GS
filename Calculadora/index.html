@@ -2,86 +2,94 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Calculadora Básica</title>
+  <title>Calculadora</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #eef;
+      font-family: sans-serif;
+      background: #f2f2f2;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
     }
     .calculadora {
-      background: white;
+      background: #fff;
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.2);
       width: 300px;
       text-align: center;
     }
-    input, select, button {
-      margin: 10px 0;
-      padding: 8px;
-      font-size: 16px;
+    input {
       width: 100%;
+      padding: 8px;
+      margin: 8px 0;
+      font-size: 16px;
+    }
+    button {
+      width: 45%;
+      padding: 10px;
+      margin: 5px;
+      font-size: 16px;
     }
     #resultado {
       margin-top: 15px;
       font-weight: bold;
-      color: #333;
     }
   </style>
 </head>
 <body>
 
 <div class="calculadora">
-  <label for="num1">Número 1:</label>
-  <input type="number" id="num1">
+  <input type="number" id="num1" placeholder="Número 1">
+  <input type="number" id="num2" placeholder="Número 2">
 
-  <label for="num2">Número 2:</label>
-  <input type="number" id="num2">
-
-    <button value="sumar">Sumar</button>
-    <button value="restar">Restar</button>
-    <button value="multiplicar">Multiplicar</button>
-    <button value="dividir">Dividir</button>
-
-  <button onclick="calcular()">Calcular</button>
+  <div>
+    <button onclick="sumar()">Sumar</button>
+    <button onclick="restar()">Restar</button>
+    <button onclick="multiplicar()">Multiplicar</button>
+    <button onclick="dividir()">Dividir</button>
+  </div>
 
   <div id="resultado"></div>
 </div>
 
 <script>
-  function calcular() {
-    const num1 = parseFloat(document.getElementById("num1").value);
-    const num2 = parseFloat(document.getElementById("num2").value);
-    const operacion = document.getElementById("operacion").value;
-    let resultado;
+  function obtenerValores() {
+    const n1 = parseFloat(document.getElementById("num1").value);
+    const n2 = parseFloat(document.getElementById("num2").value);
+    return { n1, n2 };
+  }
 
-    if (isNaN(num1) || isNaN(num2)) {
-      resultado = "Por favor, introduce dos números válidos.";
+  function sumar() {
+    const { n1, n2 } = obtenerValores();
+    mostrarResultado(n1 + n2);
+  }
+
+  function restar() {
+    const { n1, n2 } = obtenerValores();
+    mostrarResultado(n1 - n2);
+  }
+
+  function multiplicar() {
+    const { n1, n2 } = obtenerValores();
+    mostrarResultado(n1 * n2);
+  }
+
+  function dividir() {
+    const { n1, n2 } = obtenerValores();
+    if (n2 === 0) {
+      mostrarResultado("❌ No se puede dividir entre cero.");
     } else {
-      switch (operacion) {
-        case "sumar":
-          resultado = num1 + num2;
-          break;
-        case "restar":
-          resultado = num1 - num2;
-          break;
-        case "multiplicar":
-          resultado = num1 * num2;
-          break;
-        case "dividir":
-          resultado = num2 !== 0 ? num1 / num2 : "No se puede dividir entre cero.";
-          break;
-      }
+      mostrarResultado(n1 / n2);
     }
+  }
 
-    document.getElementById("resultado").innerText = 
-      typeof resultado === "number" 
-        ? ` El resultado es: ${resultado}` 
-        : resultado;
+  function mostrarResultado(valor) {
+    const resultado = document.getElementById("resultado");
+    resultado.innerText = typeof valor === "number"
+      ? `El resultado es: ${valor}`
+      : valor;
   }
 </script>
 
