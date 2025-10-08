@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora Básica</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #eef;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .calculadora {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      width: 300px;
+      text-align: center;
+    }
+    input, select, button {
+      margin: 10px 0;
+      padding: 8px;
+      font-size: 16px;
+      width: 100%;
+    }
+    #resultado {
+      margin-top: 15px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+<div class="calculadora">
+  <label for="num1">Número 1:</label>
+  <input type="number" id="num1">
+
+  <label for="num2">Número 2:</label>
+  <input type="number" id="num2">
+
+    <button value="sumar">Sumar</button>
+    <button value="restar">Restar</button>
+    <button value="multiplicar">Multiplicar</button>
+    <button value="dividir">Dividir</button>
+
+  <button onclick="calcular()">Calcular</button>
+
+  <div id="resultado"></div>
+</div>
+
+<script>
+  function calcular() {
+    const num1 = parseFloat(document.getElementById("num1").value);
+    const num2 = parseFloat(document.getElementById("num2").value);
+    const operacion = document.getElementById("operacion").value;
+    let resultado;
+
+    if (isNaN(num1) || isNaN(num2)) {
+      resultado = "Por favor, introduce dos números válidos.";
+    } else {
+      switch (operacion) {
+        case "sumar":
+          resultado = num1 + num2;
+          break;
+        case "restar":
+          resultado = num1 - num2;
+          break;
+        case "multiplicar":
+          resultado = num1 * num2;
+          break;
+        case "dividir":
+          resultado = num2 !== 0 ? num1 / num2 : "No se puede dividir entre cero.";
+          break;
+      }
+    }
+
+    document.getElementById("resultado").innerText = 
+      typeof resultado === "number" 
+        ? ` El resultado es: ${resultado}` 
+        : resultado;
+  }
+</script>
+
+</body>
+</html>
