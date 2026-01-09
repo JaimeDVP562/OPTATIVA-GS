@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 
-function App() {
+function App(  ) {
+  
   const [tareas, setTareas] = useState(() => {
     const tareasGuardadas = localStorage.getItem('tareas');
     return tareasGuardadas ? JSON.parse(tareasGuardadas) : [];
@@ -83,6 +84,7 @@ function App() {
                 </span>
                 <button onClick={() => iniciarEdicion(t.id, t.texto)}>✏️</button>
                 <button onClick={() => eliminarTarea(t.id)}>❌</button>
+            
               </>
             )}
           </li>

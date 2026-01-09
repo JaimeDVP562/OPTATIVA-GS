@@ -19,6 +19,8 @@ function ChistesRandom() {
   return (
     <div className="chistes-container">
       <p>{mensaje}</p>
+      <Hijo texto1="texto prueba 1" texto2="prueba texto 2" />
+      <Hijo2 texto1 ="otro texto 1" texto2="otro texto 2" />
       <button onClick={obtenerMensaje}>Obtener mensaje aleatorio</button>
     </div>
   );
